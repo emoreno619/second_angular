@@ -31,3 +31,11 @@ app.controller("ProjectsController", function($scope){
 app.controller("ResumeController", function($scope){
 	
 });
+
+app.controller("AddController", function($scope, $routeParams){
+	$scope.result = parseInt($routeParams.num1) + parseInt($routeParams.num2)
+});
+
+app.controller("DivideController", function($scope, $routeParams){
+	$scope.result = parseFloat($routeParams.num1) / parseFloat($routeParams.num2)
+});
