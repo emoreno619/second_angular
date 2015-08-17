@@ -10,12 +10,5 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/dogs.html',
         controller: 'DogsController'
       })
-});
-
-app.controller("HomeController", function($scope){
-	$scope.home = 1
-});
-
-app.controller("DogsController", function($scope){
-	$scope.dogs = "many"
+      .otherwise({ redirectTo: '/'})
 });

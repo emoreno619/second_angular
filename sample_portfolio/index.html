@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="yourAppName">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="./css/other_style.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
+
+	<script src="./js/app.js"></script>
+	<script src="./js/controllers.js"></script>
+</head>
+<body>
+	
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="#/bio">Eduardo Moreno</a>
+		    </div>
+
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		      <ul class="nav navbar-nav">
+		        <li ng-click="makeActive('bio')" ng-class="{active: BioIsActive}"><a href="#/bio">Bio <span class="sr-only">(current)</span></a></li>
+		        <li ng-click="makeActive('projects')" ng-class="{active: ProjectsIsActive}"><a href="#/projects">Projects</a></li>
+		        <li ng-click="makeActive('resume')" ng-class="{active: ResumeIsActive}"><a href="#/resume">Resume</a></li>
+		      </ul>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li><a href="#">Github</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		</nav>
+	
+<div class="container">
+	<div ng-view></div>
+</div>	
+</body>
+</html>
