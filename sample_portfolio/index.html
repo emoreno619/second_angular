@@ -2,6 +2,7 @@
 <html lang="en" ng-app="yourAppName">
 <head>
 	<meta charset="UTF-8">
+	<base href="/">
 	<title>Document</title>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -20,6 +21,8 @@
 
 	<script src="./js/app.js"></script>
 	<script src="./js/controllers.js"></script>
+
+
 </head>
 <body>
 	
@@ -32,14 +35,16 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
-		      <a class="navbar-brand" href="#/bio">Eduardo Moreno</a>
+		      <div ng-click="makeActive('bio')">
+		      	<a class="navbar-brand" href="/bio">Eduardo Moreno</a>
+		      </div>
 		    </div>
 
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		      <ul class="nav navbar-nav">
-		        <li ng-click="makeActive('bio')" ng-class="{active: BioIsActive}"><a href="#/bio">Bio <span class="sr-only">(current)</span></a></li>
-		        <li ng-click="makeActive('projects')" ng-class="{active: ProjectsIsActive}"><a href="#/projects">Projects</a></li>
-		        <li ng-click="makeActive('resume')" ng-class="{active: ResumeIsActive}"><a href="#/resume">Resume</a></li>
+		        <li ng-click="makeActive('bio')" ng-class="{active: BioIsActive}"><a href="/bio">Bio <span class="sr-only">(current)</span></a></li>
+		        <li ng-click="makeActive('projects')" ng-class="{active: ProjectsIsActive}"><a href="/projects">Projects</a></li>
+		        <li ng-click="makeActive('resume')" ng-class="{active: ResumeIsActive}"><a href="/resume">Resume</a></li>
 		      </ul>
 		      <ul class="nav navbar-nav navbar-right">
 		        <li><a href="#">Github</a></li>

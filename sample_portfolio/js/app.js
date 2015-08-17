@@ -1,6 +1,6 @@
 var app = angular.module("yourAppName", ['ngRoute']);
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'partials/bio.html',
@@ -14,6 +14,10 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/resume.html',
         controller: 'ResumeController'
       })
+      .when('/bio', {
+        templateUrl: 'partials/bio.html',
+        controller: 'BioController'
+      })
       .when('/add/', {
         templateUrl: 'partials/calculator.html',
         controller: 'AddController'
@@ -23,4 +27,5 @@ app.config(function($routeProvider) {
         controller: 'DivideController'
       })
       
+      $locationProvider.html5Mode(true);
 });
