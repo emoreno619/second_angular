@@ -32,10 +32,12 @@ app.controller("ResumeController", function($scope){
 	
 });
 
-app.controller("AddController", function($scope, $routeParams){
-	$scope.result = parseInt($routeParams.num1) + parseInt($routeParams.num2)
+app.controller("AddController", function($scope, $routeParams, $location){
+	console.log($location.search())
+
+	$scope.result = parseInt($location.search().x) + parseInt($location.search().y)
 });
 
-app.controller("DivideController", function($scope, $routeParams){
-	$scope.result = parseFloat($routeParams.num1) / parseFloat($routeParams.num2)
+app.controller("DivideController", function($scope, $routeParams, $location){
+	$scope.result = parseFloat($location.search().x) / parseFloat($location.search().y)
 });

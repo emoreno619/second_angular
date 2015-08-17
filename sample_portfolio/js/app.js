@@ -14,13 +14,13 @@ app.config(function($routeProvider) {
         templateUrl: 'partials/resume.html',
         controller: 'ResumeController'
       })
-      .when('/add/:num1/:num2', {
+      .when('/add/', {
         templateUrl: 'partials/calculator.html',
         controller: 'AddController'
       })
-      .when('/divide/:num1/:num2', {
+      .when('/divide/', {
         templateUrl: 'partials/calculator.html',
         controller: 'DivideController'
       })
-      .otherwise({ redirectTo: '/'})
+      
 });
