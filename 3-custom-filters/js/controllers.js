@@ -5,4 +5,5 @@ app.controller("HomeController", function($scope){
 
 app.controller("DogsController", function($scope){
 	$scope.dogs = "many_dogs_go_to_heaven"
+	$scope.cats = "though-many-cats-don't"
 });

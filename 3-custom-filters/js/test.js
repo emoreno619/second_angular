@@ -1,12 +1,6 @@
-app.filter('kebab', function () {
-  return function (input) {
-  	var newStr = input.replace(/_/g, '-')
-  	return newStr
-  };
-});
-
-app.filter('camelFromKebabOrSnake', function () {
-  return function (input) {
+function testIt(input){
+	
+  	
   	while (input.indexOf('_') != -1){
 
   		var newStr = []
@@ -50,5 +44,10 @@ app.filter('camelFromKebabOrSnake', function () {
   	} 
 
   	return input
-  };
-});
+}
+
+console.log(testIt("Hi_there"))
+console.log(testIt("Hi_there_yall"))
+console.log(testIt("Hi-there"))
+console.log(testIt("Hi-there-yall"))
+console.log(testIt("you-got_it-Bub"))
