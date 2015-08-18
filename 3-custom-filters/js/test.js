@@ -46,8 +46,44 @@ function testIt(input){
   	return input
 }
 
-console.log(testIt("Hi_there"))
-console.log(testIt("Hi_there_yall"))
-console.log(testIt("Hi-there"))
-console.log(testIt("Hi-there-yall"))
-console.log(testIt("you-got_it-Bub"))
+// console.log(testIt("Hi_there"))
+// console.log(testIt("Hi_there_yall"))
+// console.log(testIt("Hi-there"))
+// console.log(testIt("Hi-there-yall"))
+// console.log(testIt("you-got_it-Bub"))
+
+function fromSwine(input){
+	
+	var words = input.split(' ')
+	var results = []
+
+	words.forEach(function(input){
+
+
+		var newStr = ""
+
+		for (var i = 0; i < input.length; i++){
+			if (input[i] == 'a' || input[i] == 'e' || input[i] == 'i' || input[i] == 'o' || input[i] == 'u'){	
+					var vowelIndex = i;
+					i = input.length
+			}
+		}
+
+		if (vowelIndex == 0){
+			newStr = input + "-yay"
+		} else {
+			var temp = ""
+			for (var i = 0; i < vowelIndex; i++){
+				temp += input[i]
+			}
+			newStr = input.substring(vowelIndex, input.length) + "-" + temp + "ay"
+		}
+
+		results.push(newStr)
+	})
+
+	return results.join(' ')
+}
+
+console.log(fromSwine("hi egg"))
+console.log(fromSwine("what straight another"))
