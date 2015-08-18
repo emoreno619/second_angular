@@ -85,5 +85,19 @@ function fromSwine(input){
 	return results.join(' ')
 }
 
-console.log(fromSwine("hi egg"))
-console.log(fromSwine("what straight another"))
+// console.log(fromSwine("hi egg"))
+// console.log(fromSwine("what straight another"))
+
+function redact(input, target){
+	var words = input.split(' ')
+
+	words.forEach(function(aWord, index){
+		if (aWord == target)
+			words[index] = "REDACTED"		
+	})
+
+	return words.join(' ')
+}
+
+console.log(redact("BOOP BOOPITY BOOP BOOP DA-DOOP", "BOOP"))
+console.log(redact("Hi there. My name is Eduardo", "Eduardo"))

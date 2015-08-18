@@ -5,6 +5,19 @@ app.filter('kebab', function () {
   };
 });
 
+app.filter('redact', function(){
+	return function(input, target){
+		var words = input.split(' ')
+
+		words.forEach(function(aWord, index){
+			if (aWord == target)
+				words[index] = "REDACTED"		
+		})
+
+		return words.join(' ')
+	}
+})
+
 app.filter('fromFineToSwine', function (){
 	return function (input) {
 		var words = input.split(' ')
