@@ -15,4 +15,14 @@
 	<p>
 		{{zenData}}
 	</p>
+	<h2>iTunes Data</h2>
+	<p ng-repeat="song in itunes">
+		{{song.trackName}}
+	</p>
+	<h2>Message API</h2>
+	<p ng-repeat="aMessage in message">
+		{{aMessage.name}}
+		{{aMessage.content}}
+		<br>
+	</p>
 </div>

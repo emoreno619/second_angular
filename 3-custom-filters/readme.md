@@ -4,6 +4,8 @@ We've seen how to use Angular's built-in filters like `currency`, `number`, and 
 
 **EXERCISE: Come up with a situation where you would want to create a custom filter.**
 
+A: To ensure strict formatting of an input.
+
 We're going to start by creating a "snake_case" to "kebab-case" filter.  We want to be able to write: `{{"hello_class" | kebab}}` and see "hello-class" in the view.
 
 We need to start by defining a filter named "kebab".  In `filters.js`:
