@@ -91,6 +91,8 @@ This method works because the data is stored in the same origin.
 **EXERCISE:** Try making a request to an invalid URL.  Write code to properly handle a request that fails.  Does Angular have any built-in functionality that could help you?**
 
 
+
+
 **EXERCISE:** Use `$http.get()` and `$http.post()` to interact with this [Rails API that we've made for you](https://shielded-peak-6345.herokuapp.com/).  It's a simple collaborative chat app.  The API has two endpoints:
 
 The app is one Rails model, Message, which has two attributes: name and content.
@@ -112,5 +114,13 @@ message: {
 ## Questions
 
 * What is a service?  Is there a Ruby or JavaScript equivalent to Angular services?
+
+A service is a piece of functionality that is wrapped up so that it can be used repeatedly, like a function, class, library, module, package or gem.
+
 * Explain in as much detail as possible what happens under the hood of `$http.get()`
+
+The $http.get() service takes a single argument, a configuration object, that is used to create an HTTP request. The argument contains the url to which the request is sent, and the service returns a promise. The promise contains a response object which contains various properties such as data, status, the same config object from the request, etc.
+
 * What is `$q` and how does it relate to `$http`?
+
+$q is an important service that allows for asynchronous functions and their return values to be accessed once they have been completed (i.e., the foundation of 'promises'). It is related to $http insofar that $http returns a promise that is accessed via .then after the request so that the response of the request can be processed.
