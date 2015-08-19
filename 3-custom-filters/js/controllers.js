@@ -27,9 +27,9 @@ app.controller("DogsController", function($scope, $http){
 		}
 	});
 
-	$http.post('https://shielded-peak-6345.herokuapp.com/messages',{name: 'he who shall not be named!', content: 'Call me Ishmael.'}).then(function(data, status){
+	// $http.post('https://shielded-peak-6345.herokuapp.com/messages',{name: 'he who shall not be named!', content: 'Call me Ishmael.'}).then(function(data, status){
 
-	})
+	// })
 
 	$http.get('https://shielded-peak-6345.herokuapp.com/messages').then(function(data, status){
 

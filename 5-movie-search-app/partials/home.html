@@ -1,0 +1,20 @@
+<h2>Welcome Home!</h2>
+{{someData}}
+
+<h1>Movie Search</h1>
+
+<form action="javascript:void(0);" method="get">
+	<label for="movie">Movie Title</label>
+	<input ng-model="query" type="text" name="movie">
+	<input ng-click="search(query)" type="submit" value="Search">
+</form>
+
+<h1>Search Results? (Hopefully)</h1>
+
+<div ng-repeat="movie in searchResults2">
+	{{movie.Title}}
+</div>
+
+<div ng-repeat="movie in searchResults">
+	{{movie.Title}}
+</div>
