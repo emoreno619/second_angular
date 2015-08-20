@@ -26,7 +26,7 @@ app.controller('MathController', function($scope, $routeParams){
 
 **EXERCISE: DO NOT SKIP THIS EXERCISE.**  In production code, you typically want your javascript file to be as small as possible so that it can be downloaded faster.  To make the files smaller, developers minify their js files.  Find a minification tool and minify your js code.  Update your html file so that it now points to your newly minified js files.  Does your angular app still work?  If it stopped working, what is the problem?
 
-It stopped working. The variables in the controller that I minified were changed, such that they are no longer injected correctly.
+It stopped working. The variables in the controller that I minified were changed, such that they are no longer injected correctly. The variables need to be protected by being put inside of a string and array to prevent them from being minified.
 
 **EXERCISE:** So far we have mainly seen one way to do dependency injection.  Research and figure out the other two ways.  Which one is the best practice?
 
