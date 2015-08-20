@@ -1,7 +1,22 @@
-var app = angular.module('contactApp', ['ngSanitize']);
+var app = angular.module('contactApp', ['ngSanitize', 'ngRoute']);
+
+app.config(function($routeProvider, $locationProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: '/partials/contact.html',
+        controller: 'contactController'
+      })
+      .when('/show/:index', {
+        templateUrl: 'partials/show.html',
+        controller: 'ShowController'
+      })
+      .otherwise({ redirectTo: '/'})
+
+      $locationProvider.html5Mode(true);
+});
 
 app.controller("contactController", ["$scope", "ContactList", function($scope, ContactList){
-	$scope.contacts = []
+	
 	$scope.contactData = ContactList.contactList;
 
 	$scope.addContact = ContactList.addContact;
@@ -20,6 +35,18 @@ app.controller("contactController", ["$scope", "ContactList", function($scope, C
 	}
 }])
 
+app.controller("ShowController", ["$scope", "$routeParams", "ContactList", function($scope, $routeParams, ContactList){
+	$scope.contactData = ContactList.contactList;
+
+	console.log($routeParams.index)
+	console.log($scope.contactData)
+	$scope.contact = $scope.contactData[parseInt($routeParams.index)]
+	$scope.addContact = ContactList.addContact;
+	$scope.removeContact = ContactList.removeContact;
+	$scope.findContact = ContactList.findContact;
+
+}])
+
 app.factory('ContactList', function() {
   var ContactList = {};
 
@@ -33,7 +60,7 @@ app.factory('ContactList', function() {
   ContactList.findContact = function(name) {
     for (var i = 0; i < ContactList.contactList.length; i++){
 		if(ContactList.contactList[i].name == name)
-			return ContactList.contactList[i]
+			return i
 	}
   };
 
