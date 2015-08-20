@@ -20,7 +20,16 @@ app.controller("SearchController", function($scope, $http, $routeParams, $locati
 	var url = 'http://www.omdbapi.com/?i=' + $routeParams.id
 
 	$http.get(url).then(function(data){
-	    $scope.movie = data.data;    
+	    $scope.movie = data.data;  
+	    $scope.image = "http://img.omdbapi.com/?i=tt2294629&apikey=68479474&i=" + $scope.movie.imdbID
+
+	    console.log($scope.image)
+
+	    // $http.get("http://img.omdbapi.com/?i=tt2294629&apikey=68479474&i=" + $scope.movie.imdbID).then(function(data){
+	    // 	$scope.image = $scope.movie.Poster
+	    // })
+	     
+
 	}, function(status){
 		console.log(status)
 		if(status != 200){

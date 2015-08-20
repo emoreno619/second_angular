@@ -1,5 +1,9 @@
 var app = angular.module("movieSearch", ['ngRoute']);
 
+// app.run(function($http) {
+//     $http.defaults.headers.common.Authorization = 'Basic YmVlcDpib29w'
+// });
+
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
