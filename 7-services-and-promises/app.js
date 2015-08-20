@@ -5,6 +5,8 @@ app.controller("contactController", ["$scope", "ContactList", function($scope, C
 	$scope.contactData = ContactList.contactList;
 
 	$scope.addContact = ContactList.addContact;
+	$scope.removeContact = ContactList.removeContact;
+	$scope.findContact = ContactList.findContact;
 
 	$scope.highlightMe = function(event){
 		$scope.highlight = true;
