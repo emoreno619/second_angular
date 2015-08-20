@@ -6,11 +6,11 @@ app.config(function($routeProvider, $locationProvider) {
         templateUrl: 'partials/home.html',
         controller: 'HomeController'
       })
-      .when('/search', {
+      .when('/show/:id', {
         templateUrl: 'partials/search.html',
         controller: 'SearchController'
       })
-      .otherwise({ redirectTo: '/'})
+      // .otherwise({ redirectTo: '/'})
 
       $locationProvider.html5Mode(true);
 });

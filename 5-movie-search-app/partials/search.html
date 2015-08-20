@@ -1,9 +1,17 @@
-<h1>Search Results? (Hopefully)</h1>
+<h1>Move Info</h1>
 
-<div ng-repeat="movie in searchResults2">
-	{{movie.Title}}
-</div>
+<div>
+	<h2>Title: {{movie.Title}}</h2>
+	<p>Starring: {{movie.Actors}}</p>
+	<p>{{movie.Plot}}</p>
 
-<div ng-repeat="movie in searchResults">
-	{{movie.Title}}
+	<h3>Additional Details</h3>
+	<p>Year: {{movie.Year}}</p>
+	<p>Rating: {{movie.Rated}}</p>
+	<p>Genre: {{movie.Genre}}</p>
+	<p>Awards: {{movie.Awards}}</p>
+	<p>Country: {{movie.Country}}</p>
+	<p>Director: {{movie.Director}}</p>
+	<p>Writer: {{movie.Writer}}</p>
+	<p>Runtime: {{movie.Runtime}}</p>
 </div>
