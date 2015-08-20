@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="contactApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Contacts Revisited</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-sanitize.min.js"></script>
+
+	<script src="./app.js"></script>
+</head>
+<body>
+	<div style="margin-left:50px;" ng-controller="contactController">
+			<h1>Contacts App</h1>
+			<form style="margin-bottom:25px;" action="javascript:void(0)">
+				<label for="Name">Name:</label>
+				<input type="text" name="name" ng-model="contact.name">
+				<label for="Email">Email:</label>
+				<input type="text" name="email" ng-model="contact.email">
+				<label for="Phone">Phone:</label>
+				<input type="text" name="phone" ng-model="contact.phone">
+				<input ng-click="addContact(contact)" type="submit" value="Add Contact">
+			</form>
+			<label for="search">Search</label>
+			<input type="text" ng-model="searchText">
+
+			<table>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+				</tr>
+				<tr ng-mouseenter="highlightMe()" ng-mouseleave="lowlightMe()" ng-class='{shadow: highlight, noshadow: lowlight}' ng-repeat="contact in contactData | filter:searchText">
+					<td>{{contact.name}}</td>
+					<td>{{contact.email}}</td>
+					<td>{{contact.phone}}</td>
+				</tr>
+			</table>
+
+		</div>
+</body>
+</html>
