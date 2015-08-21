@@ -1,3 +1,22 @@
 <h1>Home Page!</h1>
 
 {{test}}
+
+<div ng-repeat="tea in teas">
+	<div>
+		<img ng-src="{{tea.imageUrl}}" alt="">
+	</div>
+
+	<p>
+		<h2>{{tea.name}}</h2>
+		Price: ${{tea.price}}
+		Caffeine Scale: {{tea.caffeineScale}}
+		Ingredients: {{tea.ingredients}}
+		Rating: {{tea.rating}}
+		In Stock?: {{tea.inStock}}
+		Categories:
+		<div ng-repeat="category in tea.categories">
+			{{category}}
+		</div>
+	</p>
+</div>
