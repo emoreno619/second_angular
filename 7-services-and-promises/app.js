@@ -47,7 +47,7 @@ app.controller("ShowController", ["$scope", "$routeParams", "ContactList", funct
 
 }])
 
-app.factory('ContactList', ["$http", function($http) {
+app.factory('ContactList', ["$http", "$sce", function($http, $sce) {
   var ContactList = {};
 
   ContactList.contactList = [];
@@ -59,7 +59,7 @@ app.factory('ContactList', ["$http", function($http) {
 
     $http.get(apiUrl).then(function(data){
     	console.log(data.data.data)
-    	obj.gif = data.data.data[0].embed_url
+    	obj.gif = $sce.trustAsResourceUrl(data.data.data[0].embed_url)
     	console.log(obj)
         ContactList.contactList.push(obj);
     }, function(status){

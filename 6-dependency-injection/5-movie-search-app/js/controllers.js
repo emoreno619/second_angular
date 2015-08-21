@@ -15,13 +15,13 @@ app.controller("HomeController", ['$scope', '$http', function($scope, $http){
 	}
 }])
 
-app.controller("SearchController", [ '$scope', '$http', '$routeParams', '$location', function($scope, $http, $routeParams, $location){
+app.controller("SearchController", [ '$scope', '$http', '$routeParams', '$location', '$sce', function($scope, $http, $routeParams, $location){
 
 	var url = 'http://www.omdbapi.com/?i=' + $routeParams.id
 
 	$http.get(url).then(function(data){
 	    $scope.movie = data.data;  
-	    $scope.image = "http://img.omdbapi.com/?i=tt2294629&apikey=68479474&i=" + $scope.movie.imdbID
+	    $scope.image = $sce.trustAsResourceUrl("http://img.omdbapi.com/?i=tt2294629&apikey=68479474&i=" + $scope.movie.imdbID)
 
 	    console.log($scope.image)
 
