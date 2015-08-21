@@ -1,5 +1,6 @@
-app.controller("homeController", ["$scope", "Data" , function($scope, Data){
+app.controller("homeController", ["$scope", "Data", "Cart", function($scope, Data, Cart){
 	$scope.teas = Data.teas
+	$scope.quantity = Cart.quantity
 
 	Data.teas.forEach(function(aTea){
 		var aPrice = aTea.price.toString()
@@ -10,8 +11,8 @@ app.controller("homeController", ["$scope", "Data" , function($scope, Data){
 		console.log(aTea.price)
 	})
 
-
-
-	$scope.cart = {}
-	$scope.cart.quantity = "Empty!"
+	$scope.addToCart = function(id, amount){
+		Cart.addToCart(id,amount)
+		$scope.quantity = Cart.quantity
+	}
 }])

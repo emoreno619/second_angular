@@ -1,3 +1,24 @@
+app.factory('Cart', function(){
+	var Cart = {};
+
+	Cart.cart = [];
+	Cart.quantity = 0;
+
+	Cart.addToCart = function(id, amount){
+		
+		for (var i = 0; i < amount; i++){
+			Cart.cart.push(id)
+		}
+		
+		console.log(Cart.cart)
+
+		Cart.quantity = Cart.cart.length
+
+	}
+
+	return Cart;
+})
+
 app.factory('Data', function(){
 	 
 	 var Data = {};
