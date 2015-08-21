@@ -47,14 +47,27 @@ app.controller("ShowController", ["$scope", "$routeParams", "ContactList", funct
 
 }])
 
-app.factory('ContactList', function() {
+app.factory('ContactList', ["$http", function($http) {
   var ContactList = {};
 
   ContactList.contactList = [];
 
   ContactList.addContact = function(obj) {
     console.log(obj)
-    ContactList.contactList.push(obj);
+    
+    var apiUrl = "http://api.giphy.com/v1/gifs/search?q=" + obj.name + "&api_key=dc6zaTOxFJmzC"
+
+    $http.get(apiUrl).then(function(data){
+    	console.log(data.data.data)
+    	obj.gif = data.data.data[0].embed_url
+    	console.log(obj)
+        ContactList.contactList.push(obj);
+    }, function(status){
+    	console.log(status)
+    	if(status != 200){
+    		console.log('invalid request')
+    	}
+    });
   };
 
   ContactList.findContact = function(name) {
@@ -74,4 +87,4 @@ app.factory('ContactList', function() {
   };
 
   return ContactList;
-});
+}]);
