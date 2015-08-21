@@ -1,6 +1,22 @@
-<h1>Home Page!</h1>
+<h1>Home View</h1>
 
-{{test}}
+Sort by category:
+<select name="" id="">
+	<option value=""></option>
+	<option value="awesome">Awesome</option>
+	<option value="cold">Cold</option>
+	<option value="dry">Dry</option>
+	<option value="hot">Hot</option>
+	<option value="lucid">Lucid</option>
+	<option value="spring">Spring</option>
+	<option value="summer">Summer</option>
+</select>
+
+<label for="search">Search by name:
+	<input type="text" name=search>
+</label>
+
+<button>Checkout | Cart: Empty!</button>
 
 <div ng-repeat="tea in teas">
 	<div>
@@ -9,14 +25,25 @@
 
 	<p>
 		<h2>{{tea.name}}</h2>
-		Price: ${{tea.price}}
-		Caffeine Scale: {{tea.caffeineScale}}
-		Ingredients: {{tea.ingredients}}
-		Rating: {{tea.rating}}
-		In Stock?: {{tea.inStock}}
-		Categories:
-		<div ng-repeat="category in tea.categories">
-			{{category}}
-		</div>
+		<h2>Quantity: </h2>
+		<select name="quantity" id="">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+		<input type="submit" value="Add to Cart">
+		<p><strong>Price:</strong> ${{tea.price}}</p>
+		<p><strong>Caffeine Scale:</strong> {{tea.caffeineScale}}</p>
+		<p><strong>Ingredients:</strong> {{tea.ingredients}}</p>
+		<p><strong>Rating:</strong> {{tea.rating}}</p>
+		<p><strong>In Stock?:</strong> {{tea.inStock}}</p>
+		<p>
+			<strong>Categories:</strong>
+			<ul ng-repeat="category in tea.categories">
+				<li>{{category}}</li>
+			</ul>
+		</p>
 	</p>
 </div>
