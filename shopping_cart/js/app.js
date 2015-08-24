@@ -6,9 +6,9 @@ app.config(function($routeProvider, $locationProvider) {
         templateUrl: '/partials/home.html',
         controller: 'homeController'
       })
-      .when('/show/:index', {
-        templateUrl: 'partials/show.html',
-        controller: 'ShowController'
+      .when('/checkout', {
+        templateUrl: '/partials/checkout.html',
+        controller: 'checkoutController'
       })
       .otherwise({ redirectTo: '/'})
 

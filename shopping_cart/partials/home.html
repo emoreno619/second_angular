@@ -16,7 +16,8 @@ Sort by category:
 	<input type="text" name=search>
 </label>
 
-<button type="button" class="btn btn-danger">Checkout | Cart: {{quantity}}</span></button>
+<a class="btn btn-link" href="/checkout">Checkout | Cart: {{quantity}}</a>
+<!-- <button type="button" class="btn btn-danger">Checkout | Cart: {{quantity}}</button> -->
 
 
 <div ng-repeat="tea in teas">
@@ -37,7 +38,7 @@ Sort by category:
 			</select>
 			<input ng-click="addToCart(tea._id, amount)" type="submit" value="Add to Cart">
 		</form>
-		<p><strong>Price:</strong> {{tea.price}}</p>
+		<p><strong>Price:</strong> {{tea.displayPrice}}</p>
 		<p><strong>Caffeine Scale:</strong> {{tea.caffeineScale}}</p>
 		<p><strong>Ingredients:</strong> {{tea.ingredients}}</p>
 		<p><strong>Rating:</strong> {{tea.rating}}</p>
