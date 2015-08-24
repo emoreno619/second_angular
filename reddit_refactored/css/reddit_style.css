@@ -7313,3 +7313,16 @@ a.list-group-item-danger.active:focus {
 .ng-valid input{
   background-color: #9AED8D;
 }
+
+.image {
+  display: inline-block;
+  width: 20%;
+  margin: 5px;
+}
+
+.postContent {
+  display: inline-block;
+  width: 70%;
+  margin: 5px;
+  float: left;
+}
