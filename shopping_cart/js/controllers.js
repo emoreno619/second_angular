@@ -1,7 +1,7 @@
 app.controller("homeController", ["$scope", "Data", "Cart", function($scope, Data, Cart){
 	$scope.teas = Data.teas
 	$scope.quantity = Cart.quantity
-
+	$scope.total = Cart.total
 
 	Data.teas.forEach(function(aTea){
 		var aPrice = aTea.price.toString()
@@ -15,9 +15,23 @@ app.controller("homeController", ["$scope", "Data", "Cart", function($scope, Dat
 	$scope.addToCart = function(id, amount){
 		Cart.addToCart(id,amount)
 		$scope.quantity = Cart.quantity
+		$scope.calculateCart();
+	}
+
+	$scope.calculateCart = function(){
+		Cart.calculateCart();
+		$scope.total = Cart.total
 	}
 }])
 
 app.controller("checkoutController", ["$scope", "Data", "Cart", function($scope, Data, Cart){
-	$scope.cart = Cart.cart //array of tea objects
+	$scope.cart = Cart.cart
+	$scope.quantity = Cart.quantity
+	$scope.total = Cart.total
+
+
+	$scope.calculateCart = function(){
+		Cart.calculateCart();
+		$scope.total = Cart.total
+	}
 }])

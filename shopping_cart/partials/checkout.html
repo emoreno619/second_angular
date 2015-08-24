@@ -1,5 +1,28 @@
 <h1>Time to Checkout!</h1>
 
+<div class="orderSummary">
+	<h2>Order Summary</h2>
+	Items in Cart: {{quantity}} | Cart Subtotal: {{total | currency}}
+</div>
+
+
+
+Sort by category:
+<select name="" id="">
+	<option value=""></option>
+	<option value="awesome">Awesome</option>
+	<option value="cold">Cold</option>
+	<option value="dry">Dry</option>
+	<option value="hot">Hot</option>
+	<option value="lucid">Lucid</option>
+	<option value="spring">Spring</option>
+	<option value="summer">Summer</option>
+</select>
+
+<label for="search">Search by name:
+	<input type="text" name=search>
+</label>
+
 <div ng-repeat="tea in cart">
 	<div>
 		<img ng-src="{{tea.imageUrl}}" alt="">

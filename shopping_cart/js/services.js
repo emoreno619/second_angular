@@ -3,6 +3,7 @@ app.factory('Cart', function(){
 
 	Cart.cart = [];
 	Cart.quantity = 0;
+	Cart.total = 0;
 
 	Cart.addToCart = function(item, amount){
 		
@@ -13,6 +14,15 @@ app.factory('Cart', function(){
 		console.log(Cart.cart)
 
 		Cart.quantity = parseInt(Cart.quantity) + parseInt(amount)
+
+	}
+
+	Cart.calculateCart = function(){
+		
+		Cart.cart.forEach(function(item){
+			var subtotal = parseFloat(item.price) * parseFloat(item.amount)
+			Cart.total = (parseFloat(Cart.total) + parseFloat(subtotal)) / 100
+		})
 
 	}
 
