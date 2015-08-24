@@ -1,7 +1,7 @@
 <h1>Home View</h1>
 
 Sort by category:
-<select name="" id="">
+<select ng-model="categoryFilter" name="" id="">
 	<option value=""></option>
 	<option value="awesome">Awesome</option>
 	<option value="cold">Cold</option>
@@ -13,14 +13,14 @@ Sort by category:
 </select>
 
 <label for="search">Search by name:
-	<input type="text" name=search>
+	<input type="text" name="search" ng-model="searchText">
 </label>
 
 <a class="btn btn-link" href="/checkout">Checkout | Items in Cart: {{quantity}} | Cart Subtotal: {{total | currency}}</a>
 <!-- <button type="button" class="btn btn-danger">Checkout | Cart: {{quantity}}</button> -->
 
 
-<div ng-repeat="tea in teas">
+<div ng-repeat="tea in teas | filter: categoryFilter | filter: searchText">
 	<div>
 		<img ng-src="{{tea.imageUrl}}" alt="">
 	</div>
