@@ -4,30 +4,15 @@ app.factory('Cart', function(){
 	Cart.cart = [];
 	Cart.quantity = 0;
 
-	Cart.cart2 = []
-
-	Cart.addToCart2 = function(item, amount){
+	Cart.addToCart = function(item, amount){
 		
 		item.amount = amount	
-		Cart.cart2.push(item)
+		Cart.cart.push(item)
 		
-		
-		console.log(Cart.cart2)
-
-		Cart.quantity = Cart.cart2.length
-
-	}
-
-
-	Cart.addToCart = function(id, amount){
-		
-		for (var i = 0; i < amount; i++){
-			Cart.cart.push(id)
-		}
 		
 		console.log(Cart.cart)
 
-		Cart.quantity = Cart.cart.length
+		Cart.quantity = parseInt(Cart.quantity) + parseInt(amount)
 
 	}
 

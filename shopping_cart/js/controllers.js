@@ -16,13 +16,8 @@ app.controller("homeController", ["$scope", "Data", "Cart", function($scope, Dat
 		Cart.addToCart(id,amount)
 		$scope.quantity = Cart.quantity
 	}
-
-	$scope.addToCart2 = function(id, amount){
-		Cart.addToCart2(id,amount)
-		$scope.quantity = Cart.quantity
-	}
 }])
 
 app.controller("checkoutController", ["$scope", "Data", "Cart", function($scope, Data, Cart){
-	$scope.cart2 = Cart.cart2 //array of tea objects
+	$scope.cart = Cart.cart //array of tea objects
 }])
