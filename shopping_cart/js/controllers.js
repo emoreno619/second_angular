@@ -30,6 +30,21 @@ app.controller("checkoutController", ["$scope", "Data", "Cart", function($scope,
 	$scope.total = Cart.total
 
 
+	$scope.findTotal = function(){
+		$scope.cart.forEach(function(aTea){
+			aTea.totalTeas = aTea.amount
+			aTea.totalTeasa = aTea.totalTeas.toString()
+			console.log(aTea.totalTeas)
+		})
+	}
+
+	$scope.findTotal();
+	$scope.updateCart = function(tea, amount){
+		Cart.updateCart(tea, amount)
+		$scope.quantity = Cart.quantity
+		$scope.calculateCart();
+	}
+
 	$scope.calculateCart = function(){
 		Cart.calculateCart();
 		$scope.total = Cart.total

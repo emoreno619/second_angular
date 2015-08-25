@@ -31,15 +31,18 @@ Sort by category:
 	<p>
 		<h2>{{tea.name}}</h2>
 		<h2>Quantity: </h2>
+		<h1>{{tea.amount}}</h1>
 		<form action="javascript:void(0);">
 			<select ng-model="tea.amount" name="amount" id="" selected="{{tea.amount}}">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
+				<option value="0">0</option>
+				<option ng-selected="tea.amount == 1" value="1">1</option>
+				<option ng-selected="tea.amount == 2" value="2">2</option>
+				<option ng-selected="tea.amount == 3" value="3">3</option>
+				<option ng-selected="tea.amount == 4" value="4">4</option>
+				<option ng-selected="tea.amount == 5" value="5">5</option>
 			</select>
-			<input ng-click="addToCart(tea, amount)" type="submit" value="Add to Cart">
+			<input ng-click="updateCart(tea)" type="submit" value="Update Cart">
+			<input ng-click="updateCart(tea, true)" type="submit" value="Delete">
 		</form>
 		<p><strong>Price:</strong> {{tea.displayPrice}}</p>
 		<p><strong>Caffeine Scale:</strong> {{tea.caffeineScale}}</p>

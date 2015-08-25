@@ -5,25 +5,60 @@ app.factory('Cart', function(){
 	Cart.quantity = 0;
 	Cart.total = 0;
 
-	Cart.addToCart = function(item, amount){
-		
-		item.amount = amount	
-		Cart.cart.push(item)
-		
-		
-		console.log(Cart.cart)
+	Cart.addToCart = function(item){
 
-		Cart.quantity = parseInt(Cart.quantity) + parseInt(amount)
+		var cartHasItem = false;
+		var anotherObj = {}
+		
+		Cart.quantity = parseInt(Cart.quantity) + parseInt(item.amount)
 
+		for(var j = 0; j < Cart.cart.length; j++){
+			if( Cart.cart[j].name == item.name){
+				console.log("Has the item")
+				Cart.cart[j].amount = parseInt(item.amount) + parseInt(Cart.cart[j].amount)
+				Cart.cart[j].totalAmt = parseInt(item.amount) + parseInt(Cart.cart[j].amount)
+				cartHasItem = true;
+				j = Cart.cart.length
+			}	
+		}
+
+		if(!cartHasItem){
+			for(var prop in item){
+				anotherObj[prop] = item[prop]
+			}
+			anotherObj.totalAmt = parseInt(item.amount)
+			Cart.cart.push(anotherObj)
+		}
+			
+		console.log(Cart.cart, "Cart")
 	}
 
 	Cart.calculateCart = function(){
-		
+		Cart.total = 0
+
 		Cart.cart.forEach(function(item){
 			var subtotal = parseFloat(item.price) * parseFloat(item.amount)
-			Cart.total = (parseFloat(Cart.total) + parseFloat(subtotal)) / 100
+			Cart.total = parseFloat(Cart.total) + (parseFloat(subtotal) / 100)
 		})
 
+	}
+
+	Cart.updateCart = function(tea, delet){
+		
+		console.log(tea)
+		
+
+		Cart.quantity = 0
+
+		if(delet)
+			tea.amount = 0
+
+		for (var i = 0; i < Cart.cart.length; i++){
+			Cart.quantity = Cart.quantity + parseInt(Cart.cart[i].amount)
+		}	
+		
+
+		console.log(Cart.cart)
 	}
 
 	return Cart;
