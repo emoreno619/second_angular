@@ -28,7 +28,6 @@
 	<script src="./js/services.js"></script>
 </head>
 <body>
-	<h1>Welcome to MEAN Tea!</h1>
 	<!-- BEGIN NAV -->
 
 	<nav class="navbar navbar-default">
@@ -40,16 +39,15 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="#">Reddit Single Page Clone</a>
+	      <a class="navbar-brand" href="#">MEAN Tea</a>
 	    </div>
 
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	        <li><a ng-click="toggleForm()" href="#">Add a Post?</a></li>
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sort Posts By <span class="caret"></span></a>
-	          <ul class="dropdown-menu" role="menu">
-	            <li><a ng-click="setOrder('-votes')" href="#">Votes</a></li>
+	          <ul class="dropdown-menu" role="menu" ng-model="categoryFilter">
+	            <li><a value="awesome" href="#">Awesome</a></li>
 	            <li><a ng-click="setOrder('date')" href="#">Date</a></li>
 	            <li><a ng-click="setOrder('author')" href="#">Author</a></li>
 	            <li><a ng-click="setOrder('title')" href="#">Title</a></li>

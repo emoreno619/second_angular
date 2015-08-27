@@ -1,5 +1,4 @@
-<h1>Home View</h1>
-
+<h1>Welcome to MEAN Tea!</h1>
 Sort by category:
 <select ng-model="categoryFilter" name="" id="">
 	<option value=""></option>
@@ -28,35 +27,42 @@ Sort by category:
 	</div>
 </div>
 
-<div class="row" ng-repeat="tea in teas | filter: categoryFilter | filter: searchText">
+<div class="row panel panel-primary" ng-repeat="tea in teas | filter: categoryFilter | filter: searchText">
 	<div class="pic">
-		<img ng-src="{{tea.imageUrl}}" alt="">
+		<img class="image" ng-src="{{tea.imageUrl}}" alt="">
 	</div>
 
-	<div class="itemInfo">
-		<h2>{{tea.name}}</h2>
-		<h2>Quantity: </h2>
-		<h1>{{tea.amount}}</h1>
-		<form action="javascript:void(0);">
-			<select ng-model="tea.amount" name="amount" id="">
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-			</select>
-			<input ng-click="addToCart(tea)" type="submit" value="Add to Cart">
-		</form>
-		<p><strong>Price:</strong> {{tea.displayPrice}}</p>
-		<p><strong>Caffeine Scale:</strong> {{tea.caffeineScale}}</p>
-		<p><strong>Ingredients:</strong> {{tea.ingredients}}</p>
-		<p><strong>Rating:</strong> {{tea.rating}}</p>
-		<p><strong>In Stock?:</strong> {{tea.inStock}}</p>
-		<p>
-			<strong>Categories:</strong>
-			<ul ng-repeat="category in tea.categories">
-				<li>{{category}}</li>
-			</ul>
-		</p>
+	<div class="itemInfo panel-primary">
+		<div class="singleTeaHead panel-heading">
+			<div class="teaName panel-title">
+				<h2>{{tea.name}}</h2>
+			</div>
+		</div>
+		<div class="singleTeaInfo panel-body">
+			<div class="addDiv">
+				<h3>Quantity: </h3>
+				<form action="javascript:void(0);">
+					<select ng-model="tea.amount" name="amount" id="">
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+					</select>
+					<input class="btn btn-success" ng-click="addToCart(tea)" type="submit" value="Add to Cart">
+				</form>
+			</div>
+			<p><strong>Price:</strong> {{tea.displayPrice}}</p>
+			<p><strong>Caffeine Scale:</strong> {{tea.caffeineScale}}</p>
+			<p><strong>Ingredients:</strong> {{tea.ingredients}}</p>
+			<p><strong>Rating:</strong> {{tea.rating}}</p>
+			<p><strong>In Stock?:</strong> {{tea.inStock}}</p>
+			<p>
+				<strong>Categories:</strong>
+				<ul ng-repeat="category in tea.categories">
+					<li>{{category}}</li>
+				</ul>
+			</p>
+		</div>
 	</div>
 </div>
