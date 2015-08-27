@@ -30,7 +30,7 @@
 <body>
 	<!-- BEGIN NAV -->
 
-	<nav class="navbar navbar-default">
+	<nav class="banner navbar navbar-default">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
 	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -42,11 +42,12 @@
 	      <a class="navbar-brand" href="#">MEAN Tea</a>
 	    </div>
 
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	    <div class="move collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
 	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sort Posts By <span class="caret"></span></a>
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sort Teas By <span class="caret"></span></a>
 	          <ul class="dropdown-menu" role="menu" ng-model="categoryFilter">
+	            <li><a value="awesome" href="#">None</a></li>
 	            <li><a value="awesome" href="#">Awesome</a></li>
 	            <li><a ng-click="setOrder('date')" href="#">Date</a></li>
 	            <li><a ng-click="setOrder('author')" href="#">Author</a></li>

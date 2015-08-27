@@ -6683,12 +6683,8 @@ button.close {
   display: flex;
   justify-content: space-between; }
 
-.singleTeaInfo {
-  display: flex;
-  flex-direction: column; }
-
 .addDiv {
-  align-self: flex-end;
+  float: right;
   margin-right: 1%; }
 
 .teaHead {
@@ -6706,10 +6702,30 @@ button.close {
   flex-grow: 2; }
 
 .image {
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-top: 25%;
   margin-bottom: 25%; }
+
+.checkout {
+  margin-bottom: 2%;
+  margin-right: 2%;
+  float: right; }
+
+.banner {
+  margin-right: 1%;
+  margin-left: 1%; }
+
+.move {
+  float: right; }
+
+.otherInfo {
+  display: flex;
+  flex-direction: column;
+  width: 50%; }
+
+.addBtn {
+  margin-top: 2%; }
 
 /*# sourceMappingURL=style.css.map */

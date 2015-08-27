@@ -1,5 +1,11 @@
-<h1>Welcome to MEAN Tea!</h1>
-Sort by category:
+<div class="banner panel panel-info">
+  <div class="panel-heading">
+	<h1><strong>Welcome!</strong></h1>
+  </div>
+</div>
+
+
+<!-- Sort by category:
 <select ng-model="categoryFilter" name="" id="">
 	<option value=""></option>
 	<option value="awesome">Awesome</option>
@@ -13,19 +19,19 @@ Sort by category:
 
 <label for="search">Search by name:
 	<input type="text" name="search" ng-model="searchText">
-</label>
+</label> -->
 
-<a class="btn btn-link" href="/checkout">Checkout | Items in Cart: {{quantity}} | Cart Subtotal: {{total | currency}}</a>
+<a class="checkout btn btn-primary btn-lg btn-warning" href="/checkout">Checkout | Items in Cart: {{quantity}} | Cart Subtotal: {{total | currency}}</a>
 <!-- <button type="button" class="btn btn-danger">Checkout | Cart: {{quantity}}</button> -->
 
-<div class="header">
+<!-- <div class="header">
 	<div class="teaHead">
 		Tea
 	</div>
 	<div class="infoHead">
 		Information
 	</div>
-</div>
+</div> -->
 
 <div class="row panel panel-primary" ng-repeat="tea in teas | filter: categoryFilter | filter: searchText">
 	<div class="pic">
@@ -38,31 +44,35 @@ Sort by category:
 				<h2>{{tea.name}}</h2>
 			</div>
 		</div>
-		<div class="singleTeaInfo panel-body">
+		<div class="panel-body">
 			<div class="addDiv">
-				<h3>Quantity: </h3>
 				<form action="javascript:void(0);">
+					<h3>Quantity: </h3>
 					<select ng-model="tea.amount" name="amount" id="">
+						<option value="" selected hidden />
+						<option value="0" ng-selected="true">0</option>
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
 						<option value="4">4</option>
 						<option value="5">5</option>
 					</select>
-					<input class="btn btn-success" ng-click="addToCart(tea)" type="submit" value="Add to Cart">
 				</form>
+					<input class="btn btn-success addBtn" ng-click="addToCart(tea)" type="submit" value="Add to Cart">
 			</div>
-			<p><strong>Price:</strong> {{tea.displayPrice}}</p>
-			<p><strong>Caffeine Scale:</strong> {{tea.caffeineScale}}</p>
-			<p><strong>Ingredients:</strong> {{tea.ingredients}}</p>
-			<p><strong>Rating:</strong> {{tea.rating}}</p>
-			<p><strong>In Stock?:</strong> {{tea.inStock}}</p>
-			<p>
-				<strong>Categories:</strong>
-				<ul ng-repeat="category in tea.categories">
-					<li>{{category}}</li>
-				</ul>
-			</p>
+			<div class="singleTeaInfo otherInfo">
+				<h3><strong>Price:</strong> {{tea.displayPrice}}</h3>
+				<h4><strong>Ingredients:</strong> <br><br> {{tea.ingredients}}</h4>
+				<p><strong>Caffeine Scale:</strong> {{tea.caffeineScale}}</p>
+				<p><strong>Rating:</strong> {{tea.rating}}</p>
+				<p><strong>In Stock?</strong> {{tea.inStock}}</p>
+				<p>
+					<strong>Categories:</strong>
+					<ul ng-repeat="category in tea.categories">
+						<li>{{category}}</li>
+					</ul>
+				</p>
+			</div>
 		</div>
 	</div>
 </div>

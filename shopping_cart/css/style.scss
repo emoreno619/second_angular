@@ -6841,8 +6841,8 @@ button.close {
 }
 
 .singleTeaInfo{
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
 }
 
 
@@ -6852,8 +6852,8 @@ button.close {
 }
 
 .addDiv{
-  // float: right;
-  align-self: flex-end;
+  float: right;
+  // align-self: flex-end;
   margin-right: 1%;
 }
 
@@ -6880,9 +6880,34 @@ button.close {
 }
 
 .image{
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-top: 25%;
   margin-bottom: 25%;
+}
+
+.checkout{
+  margin-bottom: 2%;
+  margin-right: 2%;
+  float: right;
+}
+
+.banner{
+  margin-right: 1%;
+  margin-left: 1%;
+}
+
+.move {
+  float: right;
+}
+
+.otherInfo {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.addBtn{
+  margin-top: 2%;
 }

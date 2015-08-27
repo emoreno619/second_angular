@@ -23,7 +23,7 @@ Sort by category:
 	<input type="text" name="search" ng-model="searchText">
 </label>
 
-<div ng-repeat="tea in cart | filter: categoryFilter | filter: searchText">
+<div class="row panel panel-primary" ng-repeat="tea in cart | filter: categoryFilter | filter: searchText">
 	<div>
 		<img ng-src="{{tea.imageUrl}}" alt="">
 	</div>
