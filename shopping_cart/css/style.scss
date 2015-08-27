@@ -6813,39 +6813,44 @@ button.close {
 }
 
 .header{
+  width: 90%;
   display: flex;
   justify-content: space-around;
-
+  margin-left: 5%;
 }
 
 .row{
+  width: 90%;
   display: flex;
   justify-content: space-around;
-
+  margin-left: 5%;
 }
 
 .pic{
+  width: 30%;
   flex-grow: 1;
   border: 1px solid #c0c0c0;
-  margin-left: 2%;
+  // margin-left: 2%;
 }
 
 .teaHead{
+  width: 30%;
   flex-grow: 1;
   border: 1px solid #c0c0c0;
-  margin-left: 2%;
+  // margin-left: 2%;
 }
 
 .infoHead{
-  margin-left: 2%;
-  margin-right: 2%;
+  // margin-right: 2%;
+  // margin-left: 2%;
+  width: 70%;
   flex-grow: 2;
   border: 1px solid #c0c0c0;
 }
 
 .itemInfo{
-  margin-left: 2%;
-  margin-right: 2%;
+  width: 70%;
   flex-grow: 2;
+  // margin-left: 2%;
   border: 1px solid #c0c0c0;
 }
