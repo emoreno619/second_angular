@@ -8,7 +8,7 @@
 
 
 Sort by category:
-<select name="" id="">
+<select ng-model="categoryFilter" name="" id="">
 	<option value=""></option>
 	<option value="awesome">Awesome</option>
 	<option value="cold">Cold</option>
@@ -20,10 +20,10 @@ Sort by category:
 </select>
 
 <label for="search">Search by name:
-	<input type="text" name=search>
+	<input type="text" name="search" ng-model="searchText">
 </label>
 
-<div ng-repeat="tea in cart">
+<div ng-repeat="tea in cart | filter: categoryFilter | filter: searchText">
 	<div>
 		<img ng-src="{{tea.imageUrl}}" alt="">
 	</div>
@@ -40,6 +40,11 @@ Sort by category:
 				<option ng-selected="tea.amount == 3" value="3">3</option>
 				<option ng-selected="tea.amount == 4" value="4">4</option>
 				<option ng-selected="tea.amount == 5" value="5">5</option>
+				<option ng-selected="tea.amount == 6" value="6">6</option>
+				<option ng-selected="tea.amount == 7" value="7">7</option>
+				<option ng-selected="tea.amount == 8" value="8">8</option>
+				<option ng-selected="tea.amount == 9" value="9">9</option>
+				<option ng-selected="tea.amount == 10" value="10">10</option>
 			</select>
 			<input ng-click="updateCart(tea)" type="submit" value="Update Cart">
 			<input ng-click="updateCart(tea, true)" type="submit" value="Delete">

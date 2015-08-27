@@ -5,6 +5,16 @@
 	<base href="/">
 	<title>Tea Shopping</title>
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="./css/style.css">
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
 
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>
@@ -19,6 +29,44 @@
 </head>
 <body>
 	<h1>Welcome to MEAN Tea!</h1>
+	<!-- BEGIN NAV -->
+
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Reddit Single Page Clone</a>
+	    </div>
+
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li><a ng-click="toggleForm()" href="#">Add a Post?</a></li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Sort Posts By <span class="caret"></span></a>
+	          <ul class="dropdown-menu" role="menu">
+	            <li><a ng-click="setOrder('-votes')" href="#">Votes</a></li>
+	            <li><a ng-click="setOrder('date')" href="#">Date</a></li>
+	            <li><a ng-click="setOrder('author')" href="#">Author</a></li>
+	            <li><a ng-click="setOrder('title')" href="#">Title</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	      <form class="navbar-form navbar-left" role="search">
+	        <div class="form-group">
+	          <input class="form-control" placeholder="Search for keyword" type="text" ng-model="searchText">
+	        </div>
+	      </form>
+	    </div>
+	  </div>
+	</nav>
+
+	<!-- END NAV -->
+
 	<div ng-view></div>
 </body>
 </html>
